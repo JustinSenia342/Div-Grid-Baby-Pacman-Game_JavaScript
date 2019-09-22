@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<!--Justin Senia-->
+
+<head>
+
+<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+<title>Div-Grid-Baby-Pacman-Game_JavaScript.html</title>
+<link href="css/StyleSheet.css" rel="stylesheet" type="text/css">
+<script src='js/ProtoFunctions.js'> </script>
+
+</head>
+
+
+<body>
+
+	<div id="playPen">
+		<script type="text/javascript">
+			createGrid(); //Creates the Grid
+			window.onload = setInitialBabyLocation; //Sets Initial Baby Location
+			document.onkeydown = babyMove; //acts as a listener and sends input to babyMove function
+		</script>
+	</div>
+
+	<div style="position:fixed;left: 125px;">
+		<button  onClick = "treatTimer = setInterval(throwTreats, 1000); gameTimer = setTimeout(endGame, 30000);"> Start Game </button>
+		Score:<input type="text" id="ScoreTotalBox" name="ScoreTotalName" value="" disabled>
+	</div>
+
+</body>
+
+</html>

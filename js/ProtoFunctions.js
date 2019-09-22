@@ -1,50 +1,13 @@
-<!DOCTYPE html>
-<html>
-
-<!--Justin Senia-->
-
-<head>
-
-<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
-<title>Div-Grid-Baby-Pacman-Game_JavaScript.html</title>
-
-<style>
-	table, th, td {
-		border: 0px solid black;
-		padding: 0px;
-		margin: 0px;
-		border-collapse: collapse;
-		vertical-align: middle;
-	}
-	
-	img{
-		display: block;
-	}
-	
-	#playPen{
-		position: relative;
-		left: 0px;
-		top: 0px;
-		Height: 500px;
-		width: 500px;
-		border-style: solid;
-		border-color: black;
-		border-width: 10px;
-	}
-</style>
-
-	<script type="text/javascript">
-
 //loading image array with 0=bgcolor, 1=baby, 2=cheerio, 3=marshmallow
 		var imageArray = new Array();
 		imageArray[0] = new Image();
 		imageArray[0].src ="http://psacake.com/web/dots/CCFFCC.gif";
 		imageArray[1] = new Image();
-		imageArray[1].src ="baby.jpg";
+		imageArray[1].src ="./src/baby.jpg";
 		imageArray[2] = new Image();
-		imageArray[2].src ="cheerio.jpg";
+		imageArray[2].src ="./src/cheerio.jpg";
 		imageArray[3] = new Image();
-		imageArray[3].src ="marshmallow.jpg";
+		imageArray[3].src ="./src/marshmallow.jpg";
 		
 		var rows; //used for grid creation
 		var cols; //used for grid creation
@@ -66,7 +29,7 @@
 		var gameTimer;				//Timeout Timer Variable
 		var score = 0;				//Total Score
 		var scoreDisplay;			//target element location for score tracking
-		var audio = new Audio('crunch.mp3'); //audio variable that plays a sound effect
+		var audio = new Audio('./src/crunch.mp3'); //audio variable that plays a sound effect
 		var babyEat = "";
 		
 //createGrid uses javascript for loops in order to construct a string that
@@ -229,26 +192,3 @@
 			clearInterval(treatTimer);
 			alert("GAME OVER! You Scored: " + score);
 		}
-	</script>
-
-</head>
-
-
-<body>
-
-	<div id="playPen">
-		<script type="text/javascript">
-			createGrid(); //Creates the Grid
-			window.onload = setInitialBabyLocation; //Sets Initial Baby Location
-			document.onkeydown = babyMove; //acts as a listener and sends input to babyMove function
-		</script>
-	</div>
-
-	<div style="position:fixed;left: 125px;">
-		<button  onClick = "treatTimer = setInterval(throwTreats, 1000); gameTimer = setTimeout(endGame, 30000);"> Start Game </button>
-		Score:<input type="text" id="ScoreTotalBox" name="ScoreTotalName" value="" disabled>
-	</div>
-
-</body>
-
-</html>

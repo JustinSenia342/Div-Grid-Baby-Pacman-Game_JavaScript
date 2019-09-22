@@ -1,0 +1,22 @@
+	table, th, td {
+		border: 0px solid black;
+		padding: 0px;
+		margin: 0px;
+		border-collapse: collapse;
+		vertical-align: middle;
+	}
+	
+	img{
+		display: block;
+	}
+	
+	#playPen{
+		position: relative;
+		left: 0px;
+		top: 0px;
+		Height: 500px;
+		width: 500px;
+		border-style: solid;
+		border-color: black;
+		border-width: 10px;
+	}
